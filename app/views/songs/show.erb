@@ -1,0 +1,12 @@
+<h1> Title: <%= @song.name %> </h1><br>
+<h2>written and performed by: <a href="/artists/<%=@artist.slug%>"><%=@artist.name%></a> </h2>
+Related Genres: <% @genres.uniq.each do |genre| %>
+<p> <a href="/genres/<%=genre.slug%>"> <%= genre.name %> </a></p>
+<% end %>
+
+<% if @created %>
+  <%= @created %>
+<% end %>
+<% if @updated %>
+  <%= @updated %>
+<% end %>
